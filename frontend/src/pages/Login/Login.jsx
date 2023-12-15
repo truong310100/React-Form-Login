@@ -23,6 +23,7 @@ export default function Login() {
               if (response.ok) {
                 const result = await response.json();
                 if (result === "true") {
+                    sessionStorage.setItem("isAuthenticated", "true");
                     navigate('/home');
                   } else {
                     setErrorMessage(result);
